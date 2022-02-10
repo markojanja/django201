@@ -22,7 +22,7 @@ print(PROJECT_DIR)
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ia=rn_wby^+tprv30b-=lyq8$qjk0e90&p)+r$1bo1y=_ytfaq'
+SECRET_KEY = 'someawesomekey'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
