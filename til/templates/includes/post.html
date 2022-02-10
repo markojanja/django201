@@ -1,0 +1,53 @@
+{% load static %}
+{% block body %} {% load sorl_thumbnail %}
+
+
+<div
+  class="max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
+  style="width: 50rem"
+>
+  {% if post.author == request.user %}
+  <div class="flex ">
+    <a class="flex items-center" href="{%url 'feed:update-post' post.id%}"> 
+      <i class="fas fa-solid fa-pen text-green-500"></i> 
+      </a>
+        <a class="flex items-center ml-3 text-red-500" href="{%url 'feed:delete-post' post.id%}">
+          <i class="fas fa-solid fa-trash"></i>
+        </a>
+  </div>
+  {% endif %}
+  <h1 class="mt-2 text-gray-600">{{post.date}}</h1>
+  <div class="mt-2">
+    <h1 class="mt-2 text-gray-600">{{post.text}}</h1>
+  </div>
+  <div class="flex justify-between items-center mt-4">
+    {% if show_detail_link %}
+    <a
+      class="text-blue-600 hover:underline"
+      href="{% url 'feed:detail' post.id %}"
+      >Read more</a
+    >
+    {% else %}
+    <span></span>
+    {% endif %}
+
+    <div>
+      <a
+        class="flex items-center"
+        href="{%url 'profiles:detail' post.author.username%}"
+      >
+        {% thumbnail post.author.profile.image "200x200" crop="center" as im %}
+        <img
+          class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
+          src="{{im.url}}"
+          alt="avatar"
+        />
+        {% endthumbnail %}
+
+        <h1 class="text-gray-700 font-bold">{{post.author.username}}</h1>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

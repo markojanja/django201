@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load sorl_thumbnail %}
+{{% block title %}
+    Home
+{% endblock title %}}
+
+{% block body %}
+
+
+<div id="post-container">
+
+    {% for post in posts  %}
+        {% include "includes/post.html" with post=post show_detail_link=True %}
+   
+    {% endfor %}
+
+  
+</div>
+
+
+
+
+{% endblock body %}

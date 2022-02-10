@@ -1,0 +1,52 @@
+label {
+    display: block;
+
+  }
+
+  body {
+    display: flex;
+  }
+
+  main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .m input {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  #id_image {
+    border: none !important;
+  }
+
+  input[type=file]::file-selector-button {
+    border: none !important;
+    background-color: #3b82f6 !important;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 10px;
+  }
+
+  .mix {
+    width: 50rem;
+  }
+
+  nav {
+    min-height: 100vh !important;
+    height: auto !important;
+  }
+  #confirm{
+    border: none!important;
+  }
+  .form-class{
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
